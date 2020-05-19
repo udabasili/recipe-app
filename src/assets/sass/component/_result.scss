@@ -11,12 +11,13 @@
 
     @include responsive(tab-port) {
         margin: 0px;
-        width: 50%;
+        width: 90%;
     }
 }
 
 .result-item{
     display: grid;
+    background-color: white;
     grid-template-columns: 40% 60%;
     grid-template-rows: repeat(3, 1fr);
     margin: 2rem 0;
@@ -32,6 +33,7 @@
 
     @include responsive(tab-port) {
         grid-template-columns: 1fr;
+        margin: 1.5rem 0;
         grid-template-rows: 200px max-content 40px min-content;
 
     }
@@ -124,7 +126,10 @@
             @include responsive(tab-port) {
                 margin: 0 auto;
                 padding: 5px;
+            }
 
+            @include responsive(tab-land) {
+                width: 50%;
             }
         }
         &:hover{

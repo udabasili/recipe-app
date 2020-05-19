@@ -13,7 +13,7 @@
         display: block;
         outline: none;
         border: none;
-        border: 6px solid $color-primary ;
+        border: 6px solid $color-primary-dark ;
         border-radius: 4rem 0 0 4rem;
         &::placeholder{
             font-size: 1.2rem;
@@ -48,7 +48,7 @@
         align-items: center;
         justify-content: center;
         height: 4rem;
-        background: $color-primary;
+        background: $color-primary-dark;
         border-radius: 0 4rem 4rem 0;
 
         @include responsive(phone) {

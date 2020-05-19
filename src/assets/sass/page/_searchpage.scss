@@ -30,12 +30,15 @@
         }
 
         @include responsive(tab-port) {
-             width: 50%
+             width: 40%
+        }
+        @include responsive(tab-land) {
+            width: 40%
         }
     }
 
     &__right-section {
-        width: 70%;
+        width: 100%;
         margin-left: 28%;
         display: flex;
         justify-content: center;
@@ -48,8 +51,8 @@
             margin-left: 42%;
          }
          @include responsive(tab-port) {
-            margin-left: 50%;
-             width: 50%;
+            width: 58%;
+            margin-left: 42%;
          }
 
 

@@ -2,22 +2,34 @@ import React, { Component } from "react";
 import Loader from "react-loader-spinner";
 
 class LazyBackground extends React.Component {
-  state = { src: null };
+  state = {
+    src: null,
+    loaded: false,
+  };
+
+  timerOut = null;
 
   componentDidMount() {
-    const { src } = this.props;
-
+    const { src, timeOut } = this.props;
     const imageLoader = new Image();
-    imageLoader.src = src;
-
     imageLoader.onload = () => {
-      this.setState({ src });
+      this.setState({
+        loaded: true,
+        src,
+      });
     };
+    this.timeOut = setTimeout(() => {
+      imageLoader.src = src;
+    }, timeOut);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timeOut);
   }
 
   render() {
-      const {src} = this.state
-    return src ? (
+    const { src, loaded } = this.state;
+    return loaded ? (
       <div
         {...this.props}
         style={{
@@ -30,10 +42,10 @@ class LazyBackground extends React.Component {
       <Loader
         type="Puff"
         className="spinner-main"
-        color="#00BFFF"
+        color="#61b60c"
         height={100}
         width={100}
-        timeout={3000} //3 secs
+        timeout={300000}
       />
     );
   }

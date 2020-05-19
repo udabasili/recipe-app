@@ -4,10 +4,19 @@ import HomeImage from "../assets/image/homepage.jpg";
 import LazyBackground from "../components/lazy-loader-background.component";
 
 class Homepage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timeOut: props.location.query ? 0 : 1000
+    }
+  }
+
+
   render() {
+    const {timeOut} = this.state
     return (
       <React.Fragment>
-        <LazyBackground className="header" src={HomeImage}>
+        <LazyBackground className="header" src={HomeImage} timeOut={timeOut}>
           <header className="header__logo-box"></header>
           <div className="header__text-box">
             <h1 className="primary-header">

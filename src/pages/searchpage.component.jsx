@@ -16,7 +16,7 @@ class SearchPage extends Component {
     searchFunction = (e) =>{
         let input = e.target.value
         this.setState({
-            searchData: input
+            searchData: input.toLowerCase()
         })
     }
 

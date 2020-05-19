@@ -15,25 +15,31 @@ const IngredientList = ({ searchData, handleChecked}) => {
                 const filteredData = ingredientValue.filter((int) => int.includes(searchData)) 
 
                 return (
-                    <div className='ingredient-list'>
-                        <input type='checkbox' 
-
-                            className='ingredient-list__checkbox' 
-                            id={`ingredient-list-${ingredientType}-${i}`}/>
-                        <label className='ingredient-list__header' htmlFor={`ingredient-list-${ingredientType}-${i}`}>
-                            <h3 className='ingredient-list__title' >
-                                <span>{filteredData.length}</span>
-                                <span>{ingredientType}</span>
-                                
-                            </h3>
-                            <div className="ingredient-list__icon">
-                                &nbsp;
-                            </div>
-                        </label>
-                        <IngredientItem key={i} handleChecked={handleChecked} ingredientValue={filteredData} />
-                </div>
-                
-            )})}
+                  <div className="ingredient-list">
+                    <input
+                      type="checkbox"
+                      className="ingredient-list__checkbox"
+                      id={`ingredient-list-${ingredientType}-${i}`}
+                    />
+                    <label
+                      className="ingredient-list__header"
+                      htmlFor={`ingredient-list-${ingredientType}-${i}`}
+                    >
+                      <h3 className="ingredient-list__title">
+                        <span>{filteredData.length}</span>
+                        <span>{ingredientType}</span>
+                      </h3>
+                      <div className="ingredient-list__icon">&nbsp;</div>
+                    </label>
+                    {IngredientItem.length > 0 && (
+                      <IngredientItem
+                        key={i}
+                        handleChecked={handleChecked}
+                        ingredientValue={filteredData}
+                      />
+                    )}
+                  </div>
+                );})}
         </div>
     )
 }

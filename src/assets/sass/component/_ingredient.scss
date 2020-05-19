@@ -21,6 +21,8 @@
     &__header {
         display: flex;
         background-color: white;
+        box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.13),
+        0 10px 10px rgba($color: #000000, $alpha: 0.13);
         border: 1.6px solid $color-primary-dark;
         align-items: center;
         cursor: pointer;
@@ -116,7 +118,7 @@
 }
 
 .ingredient-item {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $color-primary-dark;
     margin: 2px 0;
     padding: 1.5rem ;
     width: 70%;
@@ -135,10 +137,10 @@
         position: relative;
         display: flex;
         align-items: center;
-        color: $color-icon;
+        color: black;
         justify-content: space-between;
         cursor: pointer;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -162,7 +164,7 @@
     &__custom-checkbox{
         height: 3rem;
         width: 3rem;
-        background-color: #eee;
+        background-color: rgb(192, 189, 189);
         position: relative;
 
         @include responsive(phone) {
@@ -193,7 +195,6 @@
                 width: 2.5px;
                 height: 5px;
              }
-            
         }
     }
 
