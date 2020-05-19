@@ -1,0 +1,123 @@
+.recipe-page{
+    position: relative;
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.2),
+        0 10px 10px rgba($color: #000000, $alpha: 0.2)
+    ;
+    min-height: 100vh;
+    width: 70vw;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin: 15vh auto;
+
+    @include responsive(phone) {
+        width: 90%;
+    }
+
+    &__header {
+        grid-column: 1 / 3;
+        position: relative;
+        text-align: center;
+
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        background-blend-mode: saturation;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__title{
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 4rem;
+        transform: translate(-50%, -50%);
+    }
+
+    &__ingredients{
+        background-color: $color-primary-dark;
+    }
+
+    &__ingredient-list {
+        list-style: none;
+        counter-reset: ingredient-counter;
+        font-size: 1.5rem;
+        color: white;
+
+        @include responsive(phone) {
+            font-size: 1.4rem;
+            color: black;
+        }
+
+        @include responsive(tab-port) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__ingredient-item{
+        counter-increment: ingredient-counter;
+        margin: 10px;
+
+        &::before {
+            content: counter(ingredient-counter);
+            display: inline-block;
+            background: #555;
+            border: 5px solid #555;
+            padding: 1px 10px;
+            margin-right: 16px;
+            border-radius: 50%;
+
+            @include responsive(phone) {
+                display: none;
+            }
+
+            @include responsive(tab-port) {
+                margin-right:  6px;
+                padding: .4px 7px
+
+            }
+        }
+    }
+
+    &__procedure{
+        padding: 20px;
+        text-align: center;
+
+        .procedure-list{
+            list-style: none;
+            padding: 3rem;
+            font-size: 1.5rem;
+
+            @include responsive(tab-port) {
+                padding: 0
+            }
+        }
+
+        @include responsive(phone) {
+            padding: 0;
+        }
+
+        .procedure-item{
+            text-align: justify;
+            margin-bottom: 10px;
+
+            &:before {
+                content: '\1F372';
+
+                @include responsive(phone) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+[class^='box--']{
+    background-color: green;
+    border: 10px solid blue;
+}

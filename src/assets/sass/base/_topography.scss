@@ -1,0 +1,59 @@
+.primary-header{
+
+     &__micro {
+         color: white;
+         display: block;
+         font-size: 2em;
+         font-family: 'Dancing Script', cursive;
+
+        @include responsive(phone){
+             font-size: 1.2em;
+        }
+
+        @include responsive(tab-port) {
+            font-size: 90%;
+        }
+
+
+     }
+    &__main{
+        font-weight: bolder;
+        color: white;
+        display: block;
+        font-family: 'Abril Fatface',
+        cursive;
+        word-spacing: 10px;
+        text-transform: uppercase;
+        font-size: 9rem;
+        animation-name: moveInBottom;
+        animation-duration: 2s;
+
+         @include responsive(phone) {
+            font-size: 4rem;
+        }
+
+        @include responsive(tab-port) {
+            font-size: 5.5rem;
+        }
+        
+    }
+
+    &__sub{
+        font-size: 1.4rem;
+        display: block;
+        color: white;
+        text-transform: uppercase;
+
+         @include responsive(phone) {
+             font-size: 1.2rem;
+         }
+
+    }
+}
+
+.tertiary-header{
+    font-size: 1.5rem;
+    display: block;
+    color: black;
+    text-transform: uppercase;
+}

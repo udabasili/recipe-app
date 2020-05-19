@@ -1,0 +1,72 @@
+.search-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    &__input{
+        width: 70%;
+        font-size: 1.6rem;
+        height: .4rem;
+        padding: 1.8rem;
+        display: block;
+        outline: none;
+        border: none;
+        border: 6px solid $color-primary ;
+        border-radius: 4rem 0 0 4rem;
+        &::placeholder{
+            font-size: 1.2rem;
+        }
+
+        @include responsive(tab-land) {
+            width: 50%;
+        }
+
+        @include responsive(phone) {
+            height: 1rem;
+            border-radius: unset;
+            width: 85%;
+            margin: 10px 0;
+            border: 3px solid black;
+            padding: .5rem;
+        }
+
+        @include responsive(tab-port) {
+            height: 1rem;
+            margin: 2rem 0;
+            border-radius: unset;
+            padding: .5rem
+
+        }
+        
+    }
+
+    &__label {
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        background: $color-primary;
+        border-radius: 0 4rem 4rem 0;
+
+        @include responsive(phone) {
+            display: none;
+
+        }
+
+        @include responsive(tab-port) {
+            height: 3.2rem;
+            border-radius: unset;
+
+        }
+
+    }
+
+    &__icon {
+        color: $color-icon;
+    }
+
+    
+}

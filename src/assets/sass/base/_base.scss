@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    position: relative;
+            scrollbar-width: thin;
+
+}
+
+html{
+    font-size: 62.5%;
+
+    @include responsive(phone){
+        font-size: 56%;
+    }
+
+    @include responsive(phone) {
+        font-size: 50%;
+    }
+
+    @include responsive(phone) {
+        font-size: 50%;
+    }
+
+}
+
+body{
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: black;
+    scrollbar-width: thin;
+
+ 
+}
+
+.icon{
+    width: 40px;
+    fill: $color-icon;
+    height: 40px;
+}
+.scroller {
+    width: 300px;
+    height: 100px;
+    overflow-y: scroll;
+    
+}
+.switch-wrapper {
+    position: relative;
+}
+
+.switch-wrapper>div {
+    position: relative;
+}
+
+.spinner-main {
+    position: absolute;
+    left: 50%;
+    top: 50vh;
+}
