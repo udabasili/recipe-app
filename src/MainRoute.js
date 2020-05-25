@@ -37,16 +37,11 @@ const bounceTransition = {
 
 export default function MainRoute() {
     return (
-      <AnimatedSwitch
-        atEnter={bounceTransition.atEnter}
-        atLeave={bounceTransition.atLeave}
-        atActive={bounceTransition.atActive}
-        mapStyles={mapStyles}
-        className="switch-wrapper"
+      <Switch
       >
         <Route exact path="/" component={Homepage} />
         <Route exact path="/search" component={SearchPage} />
         <Route path="/recipe/:recipeName" component={RecipePage} />
-      </AnimatedSwitch>
+      </Switch>
     );
 }
